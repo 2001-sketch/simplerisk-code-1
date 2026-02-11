@@ -43,7 +43,11 @@
 
   	// Start session
   	session_set_cookie_params(0, '/', '', isset($_SERVER["HTTPS"]), true);
-  	session_start('SimpleRisk');
+  	// Use a custom session name (optional)
+session_name('simplerisk');
+
+// Start the session (no arguments in PHP 8+)
+session_start();
 
   	// Include the language file
   	require_once(language_file());
